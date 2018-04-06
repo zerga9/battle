@@ -1,3 +1,6 @@
+require 'capybara/rspec'
+require_relative '../../app'
+
 feature 'Attack' do
   scenario 'attack Player 2' do
     sign_in_and_play
