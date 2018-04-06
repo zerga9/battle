@@ -10,7 +10,12 @@ describe Game do
     expect(game.player_2).to eq player_2
   end
 
-
+  describe '#switch_turns' do
+    it 'switches the turn' do
+      game.switch_turns
+      expect(game.current_turn).to eq player_2
+    end
+  end
 
   describe '#attack' do
     it 'attacks a player' do
