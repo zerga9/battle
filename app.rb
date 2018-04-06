@@ -25,5 +25,4 @@ class Battle < Sinatra::Base
     @name_player_2 = $player_2
     erb :attack
   end
-  run!
 end
