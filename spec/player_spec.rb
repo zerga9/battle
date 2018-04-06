@@ -16,10 +16,10 @@ describe 'Player' do
     end
   end
 
-  describe '#attack' do
+  describe '#receive_damage' do
     it 'damages the player' do
-      expect(mittens).to receive(:receive_damage)
-      dave.attack(mittens)
+      mittens.receive_damage
+      expect(mittens.hit_points).to eq(50)
     end
   end
 end
