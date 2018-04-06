@@ -6,4 +6,9 @@ feature 'View hit points' do
     sign_in_and_play
     expect(page).to have_content 'Mary: 60HP'
   end
+
+  scenario 'see Playwer 1 hit points' do
+    sign_in_and_play
+    expect(page).to have_content 'Theo: 60HP'
+  end
 end

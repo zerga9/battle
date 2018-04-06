@@ -22,11 +22,13 @@ class Game
 
   def switch_turns
     @current_turn = opponent_of(current_turn)
-end
-
-  private
+  end
 
   def opponent_of(the_player)
     @players.reject { |player| player == the_player }.first
   end
+
+  private
+
+  attr_reader :players
 end
