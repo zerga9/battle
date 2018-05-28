@@ -58,3 +58,15 @@ screenshot attack page
 
 screenshot end game
 ![image](https://user-images.githubusercontent.com/33194929/40628053-929c0f74-62ba-11e8-9826-196c00a8bdda.png)
+
+#### Technologies used
+Ruby
+Sinatra
+Capybara
+
+
+#### Use
+clone project, run ```bundle install``` in terminal.
+use HTTP server. To install HTTPie ```$ brew install httpie```
+```rackup config.ru```
+in your browser go to localhost:9292 and BattleUp!!
