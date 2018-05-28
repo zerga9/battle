@@ -7,6 +7,12 @@ describe Game do
   let(:player_2) { double :player, hit_points: 60 }
   let(:dead_player) { double :player, hit_points: 0 }
 
+
+  it 'creates two players' do
+    expect(game.player_1).to eq player_1
+    expect(game.player_2).to eq player_2
+  end
+  
   describe '#player_1' do
     it 'retrieves the first player' do
       expect(game.opponent_of(player_2)).to eq player_1
@@ -26,11 +32,6 @@ describe Game do
     it 'returns a player on less than 0HP' do
       expect(finished_game.loser).to eq dead_player
     end
-  end
-
-  it 'creates two players' do
-    expect(game.player_1).to eq player_1
-    expect(game.player_2).to eq player_2
   end
 
   describe '#switch_turns' do
