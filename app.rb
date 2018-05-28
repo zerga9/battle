@@ -1,12 +1,12 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 require_relative 'lib/game'
+require_relative 'lib/attack'
 
 class Battle < Sinatra::Base
   #  enable :sessions
 
   get '/' do
-    # 'Testing Infra Working!'
     erb :index
   end
 
@@ -22,10 +22,23 @@ class Battle < Sinatra::Base
     erb :play
   end
 
+  post '/attack' do
+  Attack.run($game.opponent_of($game.current_turn))
+  if $game.game_over?
+    redirect '/game-over'
+  else
+    redirect '/attack'
+  end
+end
+
   get '/attack' do
     @game = $game
-    @game.attack(@game.opponent_of(@game.current_turn))
     erb :attack
+  end
+
+  get '/game-over' do
+    @game = $game
+    erb :game_over
   end
 
   post '/switch-turns' do

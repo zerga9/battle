@@ -18,7 +18,7 @@ describe 'Player' do
 
   describe '#receive_damage' do
     it 'damages the player' do
-      mittens.receive_damage
+      mittens.receive_damage(10)
       expect(mittens.hit_points).to eq(50)
     end
   end
